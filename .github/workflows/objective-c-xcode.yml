@@ -17,4 +17,6 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-        run: cmake -D "CMAKE_OSX_ARCHITECTURES:STRING=x86_64" . && make
+        run: |
+          export PKG_CONFIG_PATH=$(brew --prefix)/opt/openssl/lib/pkgconfig
+          cmake -D "CMAKE_OSX_ARCHITECTURES:STRING=x86_64" . && make
