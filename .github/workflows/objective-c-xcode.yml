@@ -17,4 +17,4 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-        run: cmake -D "CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64" . && make
+        run: cmake -D "CMAKE_OSX_ARCHITECTURES:STRING=x86_64" . && make
